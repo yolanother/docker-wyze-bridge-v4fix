@@ -1,0 +1,28 @@
+services:
+  wyze-bridge:
+    container_name: wyze-bridge-v4fix
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile.v4fix
+    ports:
+      - 1935:1935 # RTMP
+      - 8554:8554 # RTSP
+      - 8888:8888 # HLS
+      - 8889:8889 #WebRTC
+      - 8189:8189/udp # WebRTC/ICE
+      - 5000:5000 # WEB-UI
+    environment:
+      # Credentials from .env file
+      - WYZE_EMAIL=${WYZE_EMAIL}
+      - WYZE_PASSWORD=${WYZE_PASSWORD} 
+      - API_ID=${API_ID}
+      - API_KEY=${API_KEY}
+      # Production settings
+      - WB_AUTH=true
+      - FFMPEG_LOGLEVEL=warning
+    env_file:
+      - .env
+    volumes:
+      - ./config:/config
+      - ./media:/media
