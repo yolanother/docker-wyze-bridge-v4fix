@@ -21,8 +21,6 @@ services:
       # Production settings
       - WB_AUTH=${WB_AUTH}
       - FFMPEG_LOGLEVEL=warning
-    env_file:
-      - .env
     volumes:
       - ./config:/config
       - ./media:/media
