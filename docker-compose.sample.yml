@@ -14,10 +14,10 @@ services:
             # [OPTIONAL] Credentials can be set in the WebUI
             # API Key and ID can be obtained from the wyze dev portal: 
             # https://developer-api-console.wyze.com/#/apikey/view
-            - WYZE_EMAIL=
-            - WYZE_PASSWORD= 
-            - API_ID=
-            - API_KEY= 
+            - WYZE_EMAIL=${WYZE_EMAIL}
+            - WYZE_PASSWORD=${WYZE_PASSWORD} 
+            - API_ID=${API_ID}
+            - API_KEY=${API_KEY}
             # [OPTIONAL] IP Address of the host to enable WebRTC e.g.,:
             # - WB_IP=192.168.1.122
             # WebUI and Stream authentication:
