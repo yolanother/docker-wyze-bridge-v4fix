@@ -19,7 +19,7 @@ services:
       - API_ID=${API_ID}
       - API_KEY=${API_KEY}
       # Production settings
-      - WB_AUTH=false
+      - WB_AUTH=${WB_AUTH}
       - FFMPEG_LOGLEVEL=warning
     env_file:
       - .env
